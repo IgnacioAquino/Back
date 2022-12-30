@@ -7,9 +7,11 @@ class ProductManager {
     constructor() {
       this.products = []; 
     }
+
     addProduct(title, description, price, thumbnail, code, stock) {
       
       let existingProduct = this.products.find(p => p.code === code);
+
       if (existingProduct) {
         console.error('Este producto ya existe');
       }
@@ -31,21 +33,20 @@ class ProductManager {
     }
   
     getProductById(id) {
+
       let product = this.products.find(p => p.id === id);
       if (!product) {
         console.error('No se ha encontrado un producto con este id');
       }
       return product;
+
     }
-  }
+}
   
 
-
+// NEW PRODUCTS
 
 let productManager = new ProductManager();
-
-
-// NEW PRODUCTS
 
 productManager.addProduct('Producto 1', 'Descripción 1', 100, 'Imagen 1', 'abc123', 25);
 
